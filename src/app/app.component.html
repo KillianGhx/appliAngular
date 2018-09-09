@@ -1,6 +1,36 @@
+<div class="tabs is-centered">
+  <ul>
+    <li [ngClass]="{'is-active' : pictures}">
+      <a (click)="showPictures()" >
+        <span class="icon is-small"><i class="fas fa-image" aria-hidden="true"></i></span>
+        <span>Pictures</span>
+      </a>
+    </li>
+    <li [ngClass]="{'is-active' : music}">
+      <a (click)="showMusic()">
+        <span class="icon is-small"><i class="fas fa-music" aria-hidden="true"></i></span>
+        <span>Music</span>
+      </a>
+    </li>
+    <li [ngClass]="{'is-active' : videos  }">
+      <a (click)="showVideos()">
+        <span class="icon is-small"><i class="fas fa-film" aria-hidden="true"></i></span>
+        <span>Videos</span>
+      </a>
+    </li>
+    <li [ngClass]="{'is-active' : pictures}">
+      <a (click)="showFiles()">
+        <span class="icon is-small"><i class="far fa-file-alt" aria-hidden="true"></i></span>
+        <span>Documents</span>
+      </a>
+    </li>
+  </ul>
+</div>
 
-<div class="columns">
-    <div class="column is-four-fifths">is-four-fifths</div>
-    <div class="column">Auto</div>
-    <div class="column">Auto</div>
+<div class="content">
+  <app-pictures *ngIf="pictures"></app-pictures>
+  <app-music *ngIf="music"></app-music>
+  <app-videos *ngIf="videos"></app-videos>
+  <app-files *ngIf="files"></app-files>
+
 </div>
